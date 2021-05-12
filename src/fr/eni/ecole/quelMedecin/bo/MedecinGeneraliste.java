@@ -10,14 +10,16 @@ public class MedecinGeneraliste {
     private String nom;
     private String prenom;
     private String numeroDeTelephone;
+    private Adresse adresse;
     //Attribut de classe
     private static int tarif =25;
 
     //Constructeur de la classe
-    public MedecinGeneraliste(String nom, String prenom, String numeroDeTelephone) {
+    public MedecinGeneraliste(String nom, String prenom, String numeroDeTelephone, Adresse adresse) {
         this.nom = nom;
         this.prenom = prenom;
         this.numeroDeTelephone = numeroDeTelephone;
+        this.adresse = adresse;
     }
     //Setters
     public String getNumeroDeTelephone() {
@@ -45,5 +47,6 @@ public class MedecinGeneraliste {
      */
     public void afficher() {
         System.out.printf("%s %s %nTéléphone : %s %nTarif : %d€ %n", this.nom.toUpperCase(), this.prenom, this.numeroDeTelephone, MedecinGeneraliste.tarif);
+        this.adresse.afficher();
     }
 }

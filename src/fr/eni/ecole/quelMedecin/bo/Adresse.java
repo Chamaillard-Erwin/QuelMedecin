@@ -9,7 +9,7 @@ public class Adresse {
     //Attributs de l'instance
     private String mentionComp = null;
     private int noVoie;
-    private String typeVoie = "";
+    private String typeVoie = null;
     private String nomVoie;
     private int codePostal;
 
@@ -25,7 +25,7 @@ public class Adresse {
         this.noVoie = noVoie;
         this.nomVoie = nomVoie;
         this.codePostal = codePostal;
-        this.typeVoie = "";
+        this.typeVoie = typeVoie;
         this.nomCommune = nomCommune;
     }
 
@@ -33,11 +33,12 @@ public class Adresse {
      * Permet d'afficher les adresses
      */
     public void afficher() {
+        System.out.println("Adresse :");
         if(this.mentionComp != null) {
             System.out.printf("%s %n", this.mentionComp);
         }
+        System.out.printf("%d%s %s %n%05d %s %n", this.noVoie, this.typeVoie == null ? "" : this.typeVoie, this.nomVoie, this.codePostal, this.nomCommune);
 
-        System.out.printf("%d%s %s %n%05d %s %n", this.noVoie, this.typeVoie, this.nomVoie, this.codePostal, this.nomCommune);
     }
 
 }

@@ -20,7 +20,7 @@ public class Patient {
     private String comment;
     private Adresse adresse;
     //Contructeur de la classe Patient
-    public Patient(String nom, String prenom, String tel, char sexe, long noSecu, LocalDate dateNaissance, String comment) {
+    public Patient(String nom, String prenom, String tel, char sexe, long noSecu, LocalDate dateNaissance, String comment, Adresse adresse) {
         this.nom = nom;
         this.prenom = prenom;
         this.tel = tel;
@@ -28,20 +28,22 @@ public class Patient {
         this.dateNaissance = dateNaissance;
         this.comment = comment;
         this.sexe = sexe;
+        this.adresse = adresse;
     }
     //Méthode pour afficher un patient
     public void afficher() {
 
-        System.out.printf("%s %s %n " +
-                        "Téléphone : %s %n " +
-                        "Sexe : %s %n " +
-                        "Numéro de Sécurité sociale : %d %n " +
-                        "Date de naissance : %s %n " +
+        System.out.printf("%s %s %n" +
+                        "Téléphone : %s %n" +
+                        "Sexe : %s %n" +
+                        "Numéro de Sécurité sociale : %d %n" +
+                        "Date de naissance : %s %n" +
                         "Commentaires : %s %n",
                 this.nom.toUpperCase(),
                 this.prenom, this.tel, this.sexe == 'F' ? "Féminin" : "Masculin",
                 this.noSecu, this.dateNaissance.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT)),
-                this.comment == null ? "Aucun commentaire" : this.comment);
+                this.comment == null ? "[Aucun commentaire]" : this.comment);
+                this.adresse.afficher();
     }
 
 
