@@ -18,6 +18,7 @@ public class Patient {
     private long noSecu;
     private LocalDate dateNaissance;
     private String comment;
+    private Adresse adresse;
     //Contructeur de la classe Patient
     public Patient(String nom, String prenom, String tel, char sexe, long noSecu, LocalDate dateNaissance, String comment) {
         this.nom = nom;
