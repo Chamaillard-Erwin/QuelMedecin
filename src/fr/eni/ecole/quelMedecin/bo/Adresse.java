@@ -29,6 +29,9 @@ public class Adresse {
         this.nomCommune = nomCommune;
     }
 
+    /**
+     * Permet d'afficher les adresses
+     */
     public void afficher() {
         if(this.mentionComp != null) {
             System.out.printf("%s %n", this.mentionComp);
