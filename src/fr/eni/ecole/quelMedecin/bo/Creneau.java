@@ -1,0 +1,34 @@
+package fr.eni.ecole.quelMedecin.bo;
+
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+
+public class Creneau {
+
+
+    private LocalTime debut;
+    private int duree;
+    private MedecinGeneraliste medecin;
+
+
+    public Creneau (LocalTime debut, int duree, MedecinGeneraliste medecin) {
+        this.debut = debut;
+        this.duree = duree;
+        this.medecin = medecin;
+        medecin.ajouterCreneau(this);
+    }
+
+
+    public void afficher() {
+       System.out.printf("%s - %s (%d minutes)%n",
+                this.debut,
+                this.debut.plusMinutes(this.duree),
+                this.duree);
+    }
+
+    public MedecinGeneraliste getMedecin() {
+
+        return this.medecin;
+    }
+}
