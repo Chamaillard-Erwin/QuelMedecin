@@ -1,32 +1,20 @@
-package fr.eni.ecole.quelMedecin.bo;
-
-import sun.font.CreatedFontTracker;
-
-import java.time.LocalDate;
-import java.time.LocalTime;
-
 /**
  * Classe qui permet de construire des instances de Médecin
  * avec Nom, prénom, coordonnées, tarif etc..
  *
  * @author echamaillard2021
  */
-public class MedecinGeneraliste {
+package fr.eni.ecole.quelMedecin.bo;
+
+public class MedecinGeneraliste extends Personne{
     //Attributs d'instance
-    private String nom;
-    private String prenom;
-    private String numeroDeTelephone;
-    private Adresse adresse;
-    private Creneau[] creneauTab = new Creneau[15];;
+    protected Creneau[] creneauTab = new Creneau[15];
     //Attribut de classe
     private static int tarif =25;
 
     //Constructeur de la classe
     public MedecinGeneraliste(String nom, String prenom, String numeroDeTelephone, Adresse adresse) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.numeroDeTelephone = numeroDeTelephone;
-        this.adresse = adresse;
+        super(nom, prenom, numeroDeTelephone, adresse);
     }
     //Setters
     public String getNumeroDeTelephone() {
@@ -65,6 +53,10 @@ public class MedecinGeneraliste {
         }
     }
 
+    /**
+     * Méthode pour ajouter un crénau dans le tableau de créneau du médecin
+     * @param creneau
+     */
     public void ajouterCreneau(Creneau creneau) {
         for (int i = 0; i < this.creneauTab.length ; i++) {
             if (creneauTab[i] == null) {
